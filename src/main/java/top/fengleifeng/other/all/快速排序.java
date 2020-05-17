@@ -1,7 +1,15 @@
 package top.fengleifeng.other.all;
 
+import top.fengleifeng.util.Constants;
+
+import java.util.Arrays;
+
 public class 快速排序 {
 
+    public static void main(String[] args) {
+        int[] numOne = Arrays.copyOf(Constants.IntNotSortOne, Constants.IntNotSortOne.length);
+        Constants.printArr(QuickSort(numOne,0,numOne.length-1));
+    }
     /**
      * 快速排序方法
      * @param array

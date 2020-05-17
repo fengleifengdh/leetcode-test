@@ -1,4 +1,5 @@
 import java.sql.DriverManager;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -27,8 +28,9 @@ public class Twest {
 //                RuntimeException
 //        Thread.currentThread().getContextClassLoader()
 
-        ClassLoader.getSystemClassLoader();
+//        ClassLoader.getSystemClassLoader();
 //        DriverManager.get
 //        ClassLoader
+        Arrays.sort();
     }
 }
