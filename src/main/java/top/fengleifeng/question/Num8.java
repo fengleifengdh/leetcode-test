@@ -72,7 +72,8 @@ public class Num8 {
 //        System.out.println(new Num8().myAtoi("-91283472332"));
 //        System.out.println(new Num8().myAtoi("  0000000000012345678"));
 //        System.out.println(new Num8().myAtoi("    0000000000000   "));
-        System.out.println(new Num8().myAtoi("-000000000000001"));
+        System.out.println(new Num8().myAtoi("2147483646"));
+//        System.out.println(new Num8().myAtoi("-91283472332"));
 //        System.out.println(Integer.MAX_VALUE);
 //        System.out.println(Integer.MIN_VALUE);
 //        Line 39: java.lang.NumberFormatException: For input string: "-91283472332"
@@ -85,45 +86,58 @@ public class Num8 {
 //            System.out.println("1");
 //        }
     }
-    public int myAtoi2(String str){
+
+    public int myAtoi(String str) {
 
         int result = 0;
         int index = 0;
         char[] chars = str.toCharArray();
         int length = chars.length;
-         boolean zehngfu= true;//是正是负 true正
-         boolean qu0= false;//是正是负 true正
+        boolean zehngfu = true;//是正是负 true正
 
-        if(length<=0){
+        if (length <= 0) {
             return 0;
         }
-        while (Character.isWhitespace(chars[index])){
+        while (index < length && Character.isWhitespace(chars[index]) ) {
             index++;
-        }
-        if(chars[index]=='-'){
-            zehngfu = false;
         }
         if (index == length) {
             return 0;
         }
-        for (int i = index+1; i < chars.length; i++) {
-            if(zehngfu){
-                if(result>Integer.MAX_VALUE/10 ||(result==Integer.MAX_VALUE/10 && chars[i] >Integer.MAX_VALUE%10)){
+        if (chars[index] == '-') {
+            zehngfu = false;
+            index++;
+        } else if (chars[index] == '+') {
+            index++;
+        }
+        if (index == length) {
+            return 0;
+        }
+        for (int i = index; i < chars.length; i++) {
+            // 4.1 先判断不合法的情况
+            if (chars[i] > '9' || chars[i] < '0') {
+                break;
+            }
+            if (zehngfu) {
+                if (result > Integer.MAX_VALUE / 10 || (result == Integer.MAX_VALUE / 10 && Integer.parseInt(chars[i]+"") > Integer.MAX_VALUE % 10)) {
                     return Integer.MAX_VALUE;
                 }
-            }else{
-                if(result<Integer.MIN_VALUE/10 ||(result==Integer.MIN_VALUE/10 && chars[i] >-Integer.MIN_VALUE%10)){
+            } else {
+                if (result > -1 * (Integer.MIN_VALUE / 10) || (result == -1 * (Integer.MIN_VALUE / 10) && Integer.parseInt(chars[i]+"")> -(Integer.MIN_VALUE % 10))) {
                     return Integer.MIN_VALUE;
                 }
             }
-            result = result*10+chars[i];
+            result = result * 10 + Integer.parseInt(chars[i] + "");
+        }
+        if (!zehngfu) {
+            result = result * -1;
         }
 
         return result;
     }
 
-    public int myAtoi(String str) {
-        if(str.length()<=0){
+    public int myAtoi1(String str) {
+        if (str.length() <= 0) {
             return 0;
         }
         int result = 0;
@@ -145,9 +159,9 @@ public class Num8 {
                 if (flag == 1) {
                     flag = 2;
                 } else {
-                        if(chars[i] =='0'){
-                            continue;
-                        }
+                    if (chars[i] == '0') {
+                        continue;
+                    }
                     flag = 1;
                 }
             }
@@ -186,20 +200,20 @@ public class Num8 {
                 if (Integer.parseInt(s) <= -214748364 && temp > -(Integer.MIN_VALUE % 10)) {
                     return Integer.MIN_VALUE;
                 }
-            }else if (stringBuilder.charAt(0) == 43) {
+            } else if (stringBuilder.charAt(0) == 43) {
                 String s = str.substring(0, str.length() - 1);
                 int temp = Integer.parseInt(str.substring(str.length() - 1, str.length()));
                 if (Integer.parseInt(s) >= 214748364 && temp > (Integer.MAX_VALUE % 10)) {
                     return Integer.MAX_VALUE;
                 }
-            }else{
+            } else {
                 return Integer.MAX_VALUE;
             }
-        }else if (stringBuilder.length() == 1){
-            if (stringBuilder.charAt(0) == 45 || stringBuilder.charAt(0) == 43 ) {
+        } else if (stringBuilder.length() == 1) {
+            if (stringBuilder.charAt(0) == 45 || stringBuilder.charAt(0) == 43) {
                 return 0;
             }
-        }else if(stringBuilder.length() < 1){
+        } else if (stringBuilder.length() < 1) {
             return 0;
         }
 
