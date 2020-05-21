@@ -64,6 +64,7 @@ public class TreeNode {
         treeNode1.LevelTraversal(treeNode1);
     }
     /**
+     * 二叉树遍历
      * 三种遍历
      * 前序遍历：中 左 右
      * 中序遍历：左 中 右
