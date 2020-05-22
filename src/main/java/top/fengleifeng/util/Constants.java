@@ -33,6 +33,10 @@ public class Constants {
         for (int i = 0; i < intArr.length; i++) {
             System.out.print("[" + intArr[i] + "],");
         }
+    }   public static void printArr(Integer[] intArr) {
+        for (int i = 0; i < intArr.length; i++) {
+            System.out.print("[" + intArr[i] + "],");
+        }
     }
 
     public static void printArrs(int[][] intArr) {
