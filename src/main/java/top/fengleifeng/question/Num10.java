@@ -32,7 +32,7 @@ public class Num10 {
                 pIndex = pIndex + 2;
             } else if ((pIndex + 1 <= pchars.length - 1) && (pchars[pIndex + 1] == stemp)) {
                 pIndex = pIndex + 2;
-            }else{
+            } else {
                 return false;
             }
             if (pIndex == pchars.length && sIndex != schars.length - 1) {
@@ -44,7 +44,7 @@ public class Num10 {
                 pre = ptemp;
             }
         }
-        if(pIndex!=pchars.length-1){
+        if (pIndex != pchars.length - 1) {
             return false;
         }
         return true;
