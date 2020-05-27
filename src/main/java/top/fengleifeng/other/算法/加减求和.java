@@ -15,7 +15,8 @@ import java.util.Stack;
  **/
 public class 加减求和 {
     public static void main(String[] args) {
-        String str = "2*3-1";
+        String str = "(2-(3+5)/2)-1";
+//        String str = "(2-3*4)-1";
         System.out.println(getInt(str));
     }
 
@@ -35,21 +36,46 @@ public class 加减求和 {
         Integer integer = 0;
         for (; i < chars.length; i++) {
             char now = chars[i];
+            int tempi = i;
+            if (now == '(') {
+                i++;
+                Stack stack1 = new Stack();
+                stack1.push("(");
+                while (!stack1.isEmpty()) {
+                    if(chars[i]==')'){
+                        stack1.pop();
+                    }
+                    if(chars[i]=='('){
+                        stack1.push("(");
+                    }
+                    i++;
+                }
+                String str = string.substring(tempi + 1, --i);
+                System.out.println(str);
+                Integer k = getInt(str);
+                integer = k;
+                if(i==chars.length-1){
+                   now=' ';
+                }else{
+                    now = chars[i];
+                }
+            }
+
             if (now >= '0' && now <= '9') {
                 integer = integer * 10 + (now - '0');
             }
-            if (i == chars.length - 1 || now == '+' || now == '-'|| now == '*'|| now == '/') {
+            if (i == chars.length - 1 || now == '+' || now == '-' || now == '*' || now == '/') {
                 if (flag == '-') {
                     stack.push(-integer);
-                } else if (flag == '*'){
+                } else if (flag == '*') {
                     Integer temp = stack.pop();
-                    temp = temp*now;
+                    temp = temp * integer;
                     stack.push(temp);
-                } else if (flag == '/'){
+                } else if (flag == '/') {
                     Integer temp = stack.pop();
-                    temp = temp/now;
+                    temp = temp / integer;
                     stack.push(temp);
-                } else if (flag == '+'){
+                } else if (flag == '+') {
                     stack.push(integer);
                 }
                 flag = now;
