@@ -20,7 +20,7 @@ public class 烧饼排序 {
         sort(cake, cake.length);
         Constants.printArr(cake);
         System.out.println();
-        list.forEach(one -> System.out.print(one+","));
+        list.forEach(one -> System.out.print(one + ","));
     }
 
     public static List<Integer> list = new LinkedList<>();
@@ -40,17 +40,18 @@ public class 烧饼排序 {
             }
         }
         //进行翻转
-        reverse(source,cakeIndex,n);
+        reverse(source, cakeIndex, n);
         list.add(cake);
         //进行下一次翻转
         sort(source, n - 1);
     }
-    public static void reverse(int[] source,int index,int n){
-        Stack<Integer> stack =new Stack<>();
+
+    public static void reverse(int[] source, int index, int n) {
+        Stack<Integer> stack = new Stack<>();
         for (int i = index; i < n; i++) {
             stack.push(source[i]);
         }
-        while (!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             source[index++] = stack.pop();
         }
     }
