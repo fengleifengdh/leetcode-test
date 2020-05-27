@@ -1,5 +1,10 @@
 package top.fengleifeng.other.算法;
 
+import top.fengleifeng.util.Constants;
+
+import java.util.Arrays;
+import java.util.Collections;
+
 /**
  * @program: leetcode-test
  * @description:
@@ -13,4 +18,14 @@ package top.fengleifeng.other.算法;
  * @create: 2020-05-27 21:01
  **/
 public class 信封嵌套 {
+    public static void main(String[] args) {
+        int[][] ints = Constants.IntTwoArrSortOne;
+        Constants.printArrs(ints);
+        System.out.println();
+    }
+
+    public void num(int[][] ints)  {
+//        Arrays.sort();
+    }
+
 }
