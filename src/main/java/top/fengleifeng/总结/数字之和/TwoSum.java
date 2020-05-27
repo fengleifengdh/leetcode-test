@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * 两数之和
  * 给定一个数组[1，5,9,2]
- * 再给定一个数  3
+ * 再给定一个数  10
  * 返回[0,3]   0，3为下标
  */
 public class TwoSum {

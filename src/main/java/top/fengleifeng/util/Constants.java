@@ -10,7 +10,8 @@ public class Constants {
     public static final int[] IntNotSortOne = {2, 5, 16, 21, 51, 10, 1, 11, 4, 23};// length 10
     public static final int[] IntNotSortTwo = {3, 1, 511, 23, 5, 31, 6, 65, 2, 11};// length 10
 
-    public static  TreeNode treeNode;
+    public static TreeNode treeNode;
+
     static {
         treeNode = new TreeNode("1");
         TreeNode treeNode2 = new TreeNode("2");
@@ -29,14 +30,19 @@ public class Constants {
         treeNode5.left = treeNode7;
         treeNode5.right = treeNode8;
     }
+
     public static void printArr(int[] intArr) {
         for (int i = 0; i < intArr.length; i++) {
             System.out.print("[" + intArr[i] + "],");
         }
-    }   public static void printArr(Integer[] intArr) {
+        System.out.println();
+    }
+
+    public static void printArr(Integer[] intArr) {
         for (int i = 0; i < intArr.length; i++) {
             System.out.print("[" + intArr[i] + "],");
         }
+        System.out.println();
     }
 
     public static void printArrs(int[][] intArr) {
@@ -48,6 +54,7 @@ public class Constants {
         }
         System.out.println("------");
     }
+
     public static int[][] copy2Arr(int[][] source) {
         int[][] target = new int[source.length][source[0].length];
         for (int i = 0; i < source.length; i++) {
