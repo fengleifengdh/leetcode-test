@@ -2,6 +2,8 @@ package top.fengleifeng.util;
 
 import top.fengleifeng.总结.树.TreeNode;
 
+import java.util.List;
+
 public class Constants {
     public static final int[][] IntTwoArrSortOne = {{1,2},{3,4},{7,3},{3,2},{88,8}};
     public static final int[] IntSortOne = {1, 3, 4, 5, 6, 7, 8, 9, 10, 14};// length 10
@@ -9,6 +11,7 @@ public class Constants {
 
     public static final int[] IntNotSortOne = {2, 5, 16, 21, 51, 10, 1, 11, 4, 23};// length 10
     public static final int[] IntNotSortTwo = {3, 1, 511, 23, 5, 31, 6, 65, 2, 11};// length 10
+    public static final int[][] IntSortThree = {{1,2,3},{4,5,6},{7,8,9}};// length 10
 
     public static TreeNode treeNode;
 
@@ -63,6 +66,16 @@ public class Constants {
             }
         }
         return target;
+    }
+
+
+    public static void pringtLinkedList(List<List<Integer>> source) {
+        for (int i = 0; i < source.size(); i++) {
+            for (int j = 0; j < source.get(i).size(); j++) {
+                System.out.print(source.get(i).get(j)+",");
+            }
+            System.out.println();
+        }
     }
 
 }
