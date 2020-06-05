@@ -11,7 +11,7 @@ public class Constants {
 
     public static final int[] IntNotSortOne = {2, 5, 16, 21, 51, 10, 1, 11, 4, 23};// length 10
     public static final int[] IntNotSortTwo = {3, 1, 511, 23, 5, 31, 6, 65, 2, 11};// length 10
-    public static final int[][] IntSortThree = {{1,2,3},{4,5,6},{7,8,9}};// length 10
+    public static final int[][] IntSortThree = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};// length 10
 
     public static TreeNode treeNode;
 
