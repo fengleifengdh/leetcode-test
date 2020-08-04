@@ -9,28 +9,28 @@ public class Num2 {
          * [5,6,4]
          */
 
-        ListNode listNode = new ListNode(1);
-        ListNode listNode11 = listNode;
-        System.out.print(listNode.val + ",");
+        ListNode2 ListNode2 = new ListNode2(1);
+        ListNode2 ListNode211 = ListNode2;
+        System.out.print(ListNode2.val + ",");
         for (int i = 0; i < 1; i++) {
             int k = (int) (Math.random() * 1 + 7);
-            listNode11.next = new ListNode(k);
-            listNode11 = listNode11.next;
+            ListNode211.next = new ListNode2(k);
+            ListNode211 = ListNode211.next;
             System.out.print(k + ",");
         }
         System.out.println();
-        ListNode listNode2 = new ListNode(1);
-        ListNode listNode211 = listNode2;
-        System.out.print(listNode2.val + ",");
+        ListNode2 ListNode22 = new ListNode2(1);
+        ListNode2 ListNode2211 = ListNode22;
+        System.out.print(ListNode22.val + ",");
 
         for (int i = 0; i < 1; i++) {
             int k = (int) (Math.random() * 1 + 7);
-            listNode211.next = new ListNode(k);
-            listNode211 = listNode211.next;
+            ListNode2211.next = new ListNode2(k);
+            ListNode2211 = ListNode2211.next;
             System.out.print(k + ",");
         }
         System.out.println();
-        ListNode ll = new Num2().addTwoNumbers(listNode, listNode2);
+        ListNode2 ll = new Num2().addTwoNumbers(ListNode2, ListNode22);
 
         for (int i = 0; ll != null; ll = ll.next) {
             System.out.print(ll.val + ",");
@@ -39,11 +39,11 @@ public class Num2 {
     }
 
 
-    public ListNode addTwoNumbers(ListNode first, ListNode second) {
-        ListNode listNode = new ListNode(0);
-        ListNode curr = listNode;
-        ListNode one = first, two = second;
-        ListNode lastbrfor = listNode;
+    public ListNode2 addTwoNumbers(ListNode2 first, ListNode2 second) {
+        ListNode2 ListNode2 = new ListNode2(0);
+        ListNode2 curr = ListNode2;
+        ListNode2 one = first, two = second;
+        ListNode2 lastbrfor = ListNode2;
         int add = 0;
         while (one != null || two != null) {
 
@@ -56,7 +56,7 @@ public class Num2 {
             add = temp;
             lastbrfor = curr;
             curr.val = now;
-            curr.next = new ListNode(add);
+            curr.next = new ListNode2(add);
 
             curr = curr.next;
             if (one != null) one = one.next;
@@ -66,17 +66,17 @@ public class Num2 {
             lastbrfor.next = null;
         }
         if (add > 0 && (null != one) && (null != two)) {
-            curr.next = new ListNode(add);
+            curr.next = new ListNode2(add);
         }
-        return listNode;
+        return ListNode2;
     }
 }
 
-class ListNode {
+class ListNode2 {
     int val;
-    ListNode next;
+    ListNode2 next;
 
-    ListNode(int x) {
+    ListNode2(int x) {
         val = x;
     }
 }

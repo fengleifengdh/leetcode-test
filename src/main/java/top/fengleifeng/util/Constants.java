@@ -14,6 +14,7 @@ public class Constants {
     public static final int[][] IntSortThree = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};// length 10
 
     public static TreeNode treeNode;
+    public static ListNode listNode;
 
     static {
         treeNode = new TreeNode("1");
@@ -32,6 +33,19 @@ public class Constants {
         treeNode3.left = treeNode6;
         treeNode5.left = treeNode7;
         treeNode5.right = treeNode8;
+
+        listNode = new ListNode(1);
+        ListNode ListNode2 = new ListNode(2);
+        ListNode ListNode3 = new ListNode(3);
+        ListNode ListNode4 = new ListNode(4);
+        ListNode ListNode5 = new ListNode(5);
+        ListNode ListNode6 = new ListNode(6);
+        ListNode ListNode7 = new ListNode(7);
+        ListNode ListNode8 = new ListNode(8);
+        listNode.next = ListNode2;
+        ListNode2.next = ListNode3;
+        ListNode3.next = ListNode4;
+        ListNode4.next = ListNode5;
     }
 
     public static void printArr(int[] intArr) {
