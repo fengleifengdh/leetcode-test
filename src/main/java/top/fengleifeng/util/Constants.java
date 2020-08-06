@@ -48,6 +48,13 @@ public class Constants {
         ListNode4.next = ListNode5;
     }
 
+    public static void printArr(Object[] intArr) {
+        for (int i = 0; i < intArr.length; i++) {
+            System.out.print("[" + intArr[i] + "],");
+        }
+        System.out.println();
+    }
+
     public static void printArr(int[] intArr) {
         for (int i = 0; i < intArr.length; i++) {
             System.out.print("[" + intArr[i] + "],");
