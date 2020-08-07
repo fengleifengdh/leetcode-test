@@ -53,10 +53,10 @@ public class Num100相同的树 {
         if (null == p && null == q) {
             return true;
         }
-        if(null==p||null==q){
+        if (null == p || null == q) {
             return false;
         }
-        return p.val==q.val && isSameTree(p.right,q.right) && isSameTree(p.left,q.left);
+        return p.val == q.val && isSameTree(p.right, q.right) && isSameTree(p.left, q.left);
     }
 
     public static void main(String[] args) {
