@@ -2,7 +2,7 @@ package top.fengleifeng.总结.动态规划;
 
 public class 最长递增子序列 {
     public static void main(String[] args) {
-        int[] ints = new int[]{1, 4, 2, 4, 5, 6};
+        int[] ints = new int[]{1, 4, 2, 4, 5, 6,7};
         System.out.println(get(ints));
     }
 
