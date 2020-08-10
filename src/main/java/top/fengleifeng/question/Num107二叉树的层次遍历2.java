@@ -54,6 +54,6 @@ public class Num107二叉树的层次遍历2 {
             }
             result.add(0, one);
         }
-        return result;
+        return result ;
     }
 }
