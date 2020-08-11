@@ -1,6 +1,7 @@
 package top.fengleifeng.question;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -36,8 +37,27 @@ import java.util.List;
  * @create: 2020-08-10 16:53
  **/
 public class Num696计数二进制子串 {
+//    public int countBinarySubstrings(String s) {
+//        List<Integer> counts = new ArrayList<Integer>();
+//        int ptr = 0, n = s.length();
+//        while (ptr < n) {
+//            char c = s.charAt(ptr);
+//            int count = 0;
+//            while (ptr < n && s.charAt(ptr) == c) {
+//                ++ptr;
+//                ++count;
+//            }
+//            counts.add(count);
+//        }
+//        int ans = 0;
+//        for (int i = 1; i < counts.size(); ++i) {
+//            ans += Math.min(counts.get(i), counts.get(i - 1));
+//        }
+//        return ans;
+//    }
+
     public int countBinarySubstrings(String s) {
-        List<Integer> counts = new ArrayList<Integer>();
+        List<Integer> list = new LinkedList<>();
         int ptr = 0, n = s.length();
         while (ptr < n) {
             char c = s.charAt(ptr);
@@ -46,66 +66,14 @@ public class Num696计数二进制子串 {
                 ++ptr;
                 ++count;
             }
-            counts.add(count);
+            list.add(count);
         }
+        //循环list
         int ans = 0;
-        for (int i = 1; i < counts.size(); ++i) {
-            ans += Math.min(counts.get(i), counts.get(i - 1));
+        for (int i = 1; i < list.size(); i++) {
+            ans += Math.min(list.get(i), list.get(i - 1));
         }
         return ans;
-    }
-
-    public int countBinarySubstrings1(String s) {
-        System.out.println(s);
-        int length = s.length();
-        int result = 0;
-
-        int start = 0;
-        char startChar;
-        while (start < length) {
-            startChar = s.charAt(start);
-
-            int startnum = 1;
-            int endnum = 0;
-            for (int i = start + 1; i < length + 1; i++) {
-                char now;
-                if (i == length) {
-                    now = 'a';
-//                    endnum++;
-                    if (startnum == endnum) {
-                        System.out.println(s.substring(start, i));
-                        result++;
-                        break;
-                    }
-                } else {
-                    now = s.charAt(i);
-                    if (now == startChar && endnum == 0) {
-                        startnum++;
-                    } else if (now == startChar && endnum != 0) {
-                        if (startnum == endnum) {
-                            System.out.println(s.substring(start, i));
-                            result++;
-                            break;
-                        } else {
-                            break;
-                        }
-                    } else if (now != startChar) {
-                        endnum++;
-                        if (endnum == startnum) {
-                            System.out.println(s.substring(start, i + 1));
-                            result++;
-                            break;
-                        } else if (endnum > startnum) {
-                            break;
-                        }
-//                    } else if (now != startChar && endnum != 0) {
-//                        endnum++;
-                    }
-                }
-            }
-            start++;
-        }
-        return result;
     }
 
     public static void main(String[] args) {
@@ -114,4 +82,5 @@ public class Num696计数二进制子串 {
         int i = new Num696计数二进制子串().countBinarySubstrings(s);
         System.out.println(i);
     }
+
 }
