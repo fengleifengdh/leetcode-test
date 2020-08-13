@@ -109,4 +109,9 @@ public class Constants {
         }
     }
 
+    public static void pringLinkedList(List<Integer> source) {
+        for (int i = 0; i < source.size(); i++) {
+            System.out.print(source.get(i) + ",");
+        }
+    }
 }
