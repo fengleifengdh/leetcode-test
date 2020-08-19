@@ -41,7 +41,7 @@ public class Num41缺失的第一个正数 {
             }
             while (count < length) {
                 int now = nums[count];
-                if (now >= length || now <= 0) {
+                if (now > length || now <= 0) {
                     nums[count] = Integer.MIN_VALUE;
                     count++;
                     continue;
@@ -69,7 +69,7 @@ public class Num41缺失的第一个正数 {
     }
 
     public static void main(String[] args) {
-        int[] i = {1, 2, 0};
+        int[] i = {1};
 //        Solution solution = this.new Solution();
         int i1 = new Num41缺失的第一个正数().new Solution().firstMissingPositive(i);
         System.out.println(i1);
