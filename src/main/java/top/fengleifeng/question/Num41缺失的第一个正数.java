@@ -31,34 +31,31 @@ package top.fengleifeng.question;
  * @create: 2020-08-19 19:25
  **/
 public class Num41缺失的第一个正数 {
+    /**
+     * 思路：
+     * 将每个数据存储在数组相应的位置上 1存在0号位上
+     */
     class Solution {
         public int firstMissingPositive(int[] nums) {
-
-            int count = 0;
+            int count = 0;//代表的是第几个数字
             int length = nums.length;
-            if(length==0){
+            boolean[] haveViewed = new boolean[length];
+            if (length == 0) {
                 return 1;
             }
             while (count < length) {
-                int now = nums[count];
-                if (now > length || now <= 0) {
-                    nums[count] = Integer.MIN_VALUE;
-                    count++;
-                    continue;
-                } else {
-                    if ((now - 1) != count) {
-                        change(nums, count, now - 1);
-                    }else{
-                        count++;
-                    }
+                int value = nums[count];//代表值
+                if (value <= length && value > 0) {
+                    haveViewed[value-1] = true;
                 }
+                count++;
             }
             for (int i = 0; i < length; i++) {
-                if (nums[i] == Integer.MIN_VALUE) {
-                    return ++i;
+                if (!haveViewed[i]) {
+                    return i + 1;
                 }
             }
-            return length;
+            return length + 1;
         }
 
         public void change(int[] nums, int one, int two) {
@@ -69,7 +66,11 @@ public class Num41缺失的第一个正数 {
     }
 
     public static void main(String[] args) {
-        int[] i = {1};
+//        int[] i = {1};
+        int[] i = {1,2,0};
+//        int[] i = {1,1};
+//        int[] i = {3,4,-1,1};
+//        int[] i = {2, 2};
 //        Solution solution = this.new Solution();
         int i1 = new Num41缺失的第一个正数().new Solution().firstMissingPositive(i);
         System.out.println(i1);
