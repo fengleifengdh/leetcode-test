@@ -10,4 +10,18 @@ import lombok.Data;
 public class FlEntity {
     private String str;
     private String one;
+
+//    public int sumNums(int n) {
+//        int sum = 0;
+//        int now = 1;
+//        sum = sum + now;
+//        now++;
+//    }
+    public int one(int n){
+        return n;
+    }
+
+    public static void main(String[] args) {
+
+    }
 }
