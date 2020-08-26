@@ -40,7 +40,7 @@ public class Num50Pow {
                 if (n % 2 == 1) {
                     res = res * xn;
                 }
-                xn = xn* x;
+                xn = xn * x;
                 n = n / 2;
             }
             return res;
