@@ -122,4 +122,13 @@ public class Constants {
             System.out.println();
         }
     }
+
+    public static void printListNode(ListNode listNode) {
+
+        while (null!=listNode){
+
+            System.out.print(listNode.val+" ");
+            listNode = listNode.next;
+        }
+    }
 }
